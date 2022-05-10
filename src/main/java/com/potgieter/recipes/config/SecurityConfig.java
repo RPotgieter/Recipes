@@ -1,4 +1,4 @@
-package com.potgieter.recipies.config;
+package com.potgieter.recipes.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

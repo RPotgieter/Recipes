@@ -1,4 +1,4 @@
-package com.potgieter.recipies;
+package com.potgieter.recipes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

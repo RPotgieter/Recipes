@@ -1,4 +1,4 @@
-package com.potgieter.recipies.models;
+package com.potgieter.recipes.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
@@ -20,6 +20,7 @@ public class Recipe {
     @CreatedDate
     @JsonFormat(pattern = "dd‐MM‐yyyy HH:mm", timezone = "UTC")
     Instant createdOn;
+    String name;
     boolean vegetarian;
     int servesAmount;
     List<String> ingredients;

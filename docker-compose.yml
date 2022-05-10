@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+
   mongodb:
     image: mongo:latest
     environment:
@@ -10,3 +11,20 @@ services:
       - "27017:27017"
     volumes:
       - ./mongodata:/data/db
+    networks:
+      backend:
+        ipv4_address: 172.20.1.101
+
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      backend:
+        ipv4_address: 172.20.1.102
+
+networks:
+  backend:
+    ipam:
+      config:
+        - subnet: 172.20.1.0/16
