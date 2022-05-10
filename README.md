@@ -17,6 +17,12 @@ To get the whole stack up and running, run:
 ```
 docker-compose up -d
 ```
+Getting logs:
+```
+docker-compose logs api -f
+```
+
+It takes a few seconds for Gradle to do its thing.
 
 Then visit http://localhost:8080/api/v1/recipe (authentication will be prompted, see Authentication section) </br>
 Or, visit http://localhost:8080/api/v1/ to explore via HAL.
