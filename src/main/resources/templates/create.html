@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <title>Recipe Create</title>
+</head>
+<body>
+
+<form th:action="@{/recipes/create}" th:object="${create}" method="POST">
+
+  Name: <input type="text" th:field="*{name}" class="form-control col-4 mb-4" placeholder="Enter Name" />
+  <br>
+  Vegetarian? <select th:field="*{vegetarian}">
+  <option th:value="true" th:text="Yes"></option>
+  <option th:value="false" th:text="No"></option>
+</select>
+  <br>
+  Serves Amount: <input type="number" name="servesAmount" th:field="*{servesAmount}">
+  <br>
+  Ingredients (Comma separated): <br>
+  <label>
+    <textarea th:field="*{ingredients}"></textarea>
+  </label>
+  <br>
+  Instructions: <br>
+  <label>
+    <textarea th:field="*{instructions}"></textarea>
+  </label>
+  <br>
+  <button type="submit" class="btn btn-primary col-2">Save</button>
+</form>
+<br>
+<br>
+<a th:href="@{/recipes}">Back</a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <title>Recipe Viewer</title>
+</head>
+<body>
+<h1 th:text="${recipe.name}">Name</h1>
+
+<table border="1">
+  <tr>
+    <td>Created</td>
+    <td>Vegetarian</td>
+    <td>Serves Amount</td>
+  </tr>
+  <td th:text="${recipe.createdOn}">Created</td>
+  <td th:text="${recipe.vegetarian}">Vegetarian</td>
+  <td th:text="${recipe.servesAmount}">Serves Amount</td>
+</table>
+
+<h3>Ingredients:</h3>
+<ul>
+  <li th:each="ingredient : ${recipe.ingredients}">
+    <span th:text="${ingredient}"></span>
+  </li>
+</ul>
+<br>
+<h3>Instructions:</h3>
+<span th:text="${recipe.instructions}"></span>
+<br>
+<br>
+<a th:href="@{/recipes}">Back</a>
+</body>
+</html>
