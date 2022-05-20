@@ -3,42 +3,44 @@ package com.potgieter.recipes.controllers;
 import com.potgieter.recipes.exceptions.RecipeNotFoundException;
 import com.potgieter.recipes.models.Recipe;
 import com.potgieter.recipes.services.RecipeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController()
+@RestController
 @RequestMapping("/api/v2")
-public class RecipeController {
+public class RecipeApiController {
 
     private final RecipeService recipeService;
 
-    public RecipeController(RecipeService recipeService) {
-
+    public RecipeApiController(RecipeService recipeService) {
         this.recipeService = recipeService;
     }
 
-    @GetMapping("/recipe/{id}")
+    @GetMapping(value = "/recipes/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Recipe getRecipe(@PathVariable String id) throws RecipeNotFoundException  {
         return recipeService.getRecipe(id);
     }
 
-    @GetMapping("/recipe")
+    @GetMapping("/recipes")
     public List<Recipe> getAllRecipes() {
         return recipeService.getAllRecipes();
     }
 
-    @DeleteMapping("/recipe/{id}")
+    @DeleteMapping("/recipes/{id}")
     void deleteRecipe(@PathVariable String id) throws RecipeNotFoundException {
         recipeService.removeRecipe(id);
     }
 
-    @PatchMapping("/recipe")
+    @PatchMapping("/recipes")
     Recipe updateRecipe(@RequestBody Recipe updateBody) throws RecipeNotFoundException {
         return recipeService.updateRecipe(updateBody);
     }
 
-    @PutMapping("/recipe")
+    @PutMapping("/recipes")
     Recipe createRecipe(@RequestBody Recipe recipe) {
         return recipeService.createRecipe(recipe);
     }

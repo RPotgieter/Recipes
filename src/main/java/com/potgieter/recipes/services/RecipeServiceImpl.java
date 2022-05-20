@@ -40,6 +40,6 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     public Recipe createRecipe(Recipe createData) {
-        return repository.insert(createData);
+        return repository.save(createData);
     }
 }

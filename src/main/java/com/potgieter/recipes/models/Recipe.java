@@ -1,6 +1,9 @@
 package com.potgieter.recipes.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mongodb.lang.NonNull;
 import lombok.Builder;
 import lombok.Value;
 import org.springframework.data.annotation.CreatedDate;
@@ -17,6 +20,7 @@ public class Recipe {
 
     @Id
     String id;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @CreatedDate
     @JsonFormat(pattern = "dd‐MM‐yyyy HH:mm", timezone = "UTC")
     Instant createdOn;
