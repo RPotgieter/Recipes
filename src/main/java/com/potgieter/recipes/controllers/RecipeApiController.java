@@ -37,10 +37,12 @@ public class RecipeApiController {
 
     @PatchMapping("/recipes")
     Recipe updateRecipe(@RequestBody Recipe updateBody) throws RecipeNotFoundException {
+        Recipe found = recipeService.getRecipe(updateBody.getId());
+        found.toBuilder().createdOn(found.getCreatedOn());
         return recipeService.updateRecipe(updateBody);
     }
 
-    @PutMapping("/recipes")
+    @PostMapping("/recipes")
     Recipe createRecipe(@RequestBody Recipe recipe) {
         return recipeService.createRecipe(recipe);
     }

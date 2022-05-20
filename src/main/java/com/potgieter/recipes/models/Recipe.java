@@ -8,19 +8,20 @@ import lombok.Builder;
 import lombok.Value;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.ReadOnlyProperty;
+import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.Instant;
 import java.util.List;
 
 @Value
-@Builder
+@Builder(toBuilder = true)
 @Document("recipe")
 public class Recipe {
 
     @Id
     String id;
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @CreatedDate
     @JsonFormat(pattern = "dd‐MM‐yyyy HH:mm", timezone = "UTC")
     Instant createdOn;

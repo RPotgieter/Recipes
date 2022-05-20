@@ -55,12 +55,12 @@ class RecipeApplicationTests {
     }
 
     @Test
-    public void shouldBeEmptyAfterDelete() {
+    public void shouldBeGoneAfterDelete() {
 //      When:
         repository.deleteById("1234");
 
 //      Then:
-        assertThat(repository.findAll()).isEmpty();
+        assertThat(repository.findById("1234")).isEmpty();
     }
 
     @Test
