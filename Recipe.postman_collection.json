@@ -6,173 +6,421 @@
 	},
 	"item": [
 		{
-			"name": "Query all",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
+			"name": "(v1) Spring Data generated apis",
+			"item": [
+				{
+					"name": "Query all",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
 						},
-						{
-							"key": "username",
-							"value": "admin",
-							"type": "string"
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/recipe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"recipe"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/recipe",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"recipe"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add entry",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Strange Cake\",\n    \"vegetarian\":  false,\n    \"servesAmount\": 2,\n    \"ingredients\": [\n        \"100g Flour\",\n        \"400ml Water\",\n        \"4g Salt\",\n        \"250g Butter\",\n        \"4 eggs\"\n        ],\n    \"instructions\": \"Mix all together and stil clockwise for 2 hours\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Add entry",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Strange Cake\",\n    \"vegetarian\":  false,\n    \"servesAmount\": 2,\n    \"ingredients\": [\n        \"100g Flour\",\n        \"400ml Water\",\n        \"4g Salt\",\n        \"250g Butter\",\n        \"4 eggs\"\n        ],\n    \"instructions\": \"Mix all together and stil clockwise for 2 hours\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/recipe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"recipe"
+							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update entry",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Very Strange Cake \",\n    \"vegetarian\":  false,\n    \"servesAmount\": 2,\n    \"ingredients\": [\n        \"100g Flour\",\n        \"400ml Water\",\n        \"4g Salt\",\n        \"250g Butter\",\n        \"4 eggs\"\n        ],\n    \"instructions\": \"Mix all together and stil clockwise for 2 hours\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"627a44206ff8531e3984df44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query One",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"627a44206ff8531e3984df44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"627a44206ff8531e3984df44"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "password",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "admin",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
 					}
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/recipe",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"recipe"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update entry",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Strange Cake\",\n    \"vegetarian\":  false,\n    \"servesAmount\": 2,\n    \"ingredients\": [\n        \"100g Flour\",\n        \"400ml Water\",\n        \"4g Salt\",\n        \"250g Butter\",\n        \"4 eggs\"\n        ],\n    \"instructions\": \"Mix all together and stil clockwise for 2 hours\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
 					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/recipe",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"recipe"
-					]
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Query One",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
+			"name": "(v2) Manually created apis",
+			"item": [
+				{
+					"name": "Query all",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
 						},
-						{
-							"key": "username",
-							"value": "admin",
-							"type": "string"
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/recipe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"recipe"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/recipe",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"recipe"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete one",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": [
-						{
-							"key": "password",
-							"value": "password",
-							"type": "string"
+				{
+					"name": "Add entry",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
 						},
-						{
-							"key": "username",
-							"value": "admin",
-							"type": "string"
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Strange Cake\",\n    \"vegetarian\":  false,\n    \"servesAmount\": 2,\n    \"ingredients\": [\n        \"100g Flour\",\n        \"400ml Water\",\n        \"4g Salt\",\n        \"250g Butter\",\n        \"4 eggs\"\n        ],\n    \"instructions\": \"Mix all together and stil clockwise for 2 hours\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/recipe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"recipe"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"recipe",
-						"627a44206ff8531e3984df44"
-					]
+				{
+					"name": "Update entry",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Very Strange Cake \",\n    \"vegetarian\":  false,\n    \"servesAmount\": 2,\n    \"ingredients\": [\n        \"100g Flour\",\n        \"400ml Water\",\n        \"4g Salt\",\n        \"250g Butter\",\n        \"4 eggs\"\n        ],\n    \"instructions\": \"Mix all together and stil clockwise for 2 hours\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"627a44206ff8531e3984df44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query One",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"627a44206ff8531e3984df44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete one",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"recipe",
+								"627a44206ff8531e3984df44"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
