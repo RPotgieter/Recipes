@@ -3,8 +3,7 @@ package com.potgieter.recipes.controllers;
 import com.potgieter.recipes.exceptions.RecipeNotFoundException;
 import com.potgieter.recipes.models.Recipe;
 import com.potgieter.recipes.services.RecipeService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,6 +42,7 @@ public class RecipeApiController {
     }
 
     @PostMapping("/recipes")
+    @ResponseStatus(HttpStatus.CREATED)
     Recipe createRecipe(@RequestBody Recipe recipe) {
         return recipeService.createRecipe(recipe);
     }
