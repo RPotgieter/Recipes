@@ -11,21 +11,6 @@
 				{
 					"name": "Query all",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "password",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -47,26 +32,11 @@
 				{
 					"name": "Add entry",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "password",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Strange Cake\",\n    \"vegetarian\":  false,\n    \"servesAmount\": 2,\n    \"ingredients\": [\n        \"100g Flour\",\n        \"400ml Water\",\n        \"4g Salt\",\n        \"250g Butter\",\n        \"4 eggs\"\n        ],\n    \"instructions\": \"Mix all together and stil clockwise for 2 hours\"\n}",
+							"raw": "{\n    \"name\": \"Test\",\n    \"vegetarian\":  false,\n    \"servesAmount\": 2,\n    \"ingredients\": [\n        \"100g Flour\",\n        \"400ml Water\",\n        \"4g Salt\",\n        \"250g Butter\",\n        \"4 eggs\"\n        ],\n    \"instructions\": \"Mix all together and stil clockwise for 2 hours\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -104,7 +74,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"raw": "http://localhost:8080/api/v1/recipe/6287a5ca1abaa7138e335363",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -114,7 +84,7 @@
 								"api",
 								"v1",
 								"recipe",
-								"627a44206ff8531e3984df44"
+								"6287a5ca1abaa7138e335363"
 							]
 						}
 					},
@@ -123,25 +93,10 @@
 				{
 					"name": "Query One",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "password",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"raw": "http://localhost:8080/api/v1/recipe/6287aae288656745b4cd7fc4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -151,7 +106,7 @@
 								"api",
 								"v1",
 								"recipe",
-								"627a44206ff8531e3984df44"
+								"6287aae288656745b4cd7fc4"
 							]
 						}
 					},
@@ -160,25 +115,10 @@
 				{
 					"name": "Delete one",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "password",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
-						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"raw": "http://localhost:8080/api/v1/recipe/6287a5ca1abaa7138e335363",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -188,7 +128,7 @@
 								"api",
 								"v1",
 								"recipe",
-								"627a44206ff8531e3984df44"
+								"6287a5ca1abaa7138e335363"
 							]
 						}
 					},
@@ -255,7 +195,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/recipe",
+							"raw": "http://localhost:8080/api/v2/recipes",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -263,8 +203,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"v1",
-								"recipe"
+								"v2",
+								"recipes"
 							]
 						}
 					},
@@ -273,21 +213,6 @@
 				{
 					"name": "Add entry",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "password",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -300,7 +225,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/recipe",
+							"raw": "http://localhost:8080/api/v2/recipes",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -308,8 +233,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"v1",
-								"recipe"
+								"v2",
+								"recipes"
 							]
 						}
 					},
@@ -322,7 +247,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Very Strange Cake \",\n    \"vegetarian\":  false,\n    \"servesAmount\": 2,\n    \"ingredients\": [\n        \"100g Flour\",\n        \"400ml Water\",\n        \"4g Salt\",\n        \"250g Butter\",\n        \"4 eggs\"\n        ],\n    \"instructions\": \"Mix all together and stil clockwise for 2 hours\"\n}",
+							"raw": "{\n    \"id\": \"6287ad0ff59c8c03936ea318\",\n    \"name\": \"Testaa\",\n    \"vegetarian\": false,\n    \"servesAmount\": 2,\n    \"ingredients\": [\n        \"100g Flour\",\n        \"400ml Water\",\n        \"4g Salt\",\n        \"250g Butter\",\n        \"4 eggs\"\n    ],\n    \"instructions\": \"Mix all together and stil clockwise for 2 hours\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -330,7 +255,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"raw": "http://localhost:8080/api/v2/recipes",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -338,9 +263,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"v1",
-								"recipe",
-								"627a44206ff8531e3984df44"
+								"v2",
+								"recipes"
 							]
 						}
 					},
@@ -349,25 +273,10 @@
 				{
 					"name": "Query One",
 					"request": {
-						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "password",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "admin",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"raw": "http://localhost:8080/api/v2/recipes/6287aae288656745b4cd7fc4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -375,9 +284,9 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"v1",
-								"recipe",
-								"627a44206ff8531e3984df44"
+								"v2",
+								"recipes",
+								"6287aae288656745b4cd7fc4"
 							]
 						}
 					},
@@ -404,7 +313,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/recipe/627a44206ff8531e3984df44",
+							"raw": "http://localhost:8080/api/v2/recipes/627a44206ff8531e3984df44",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -412,8 +321,8 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"v1",
-								"recipe",
+								"v2",
+								"recipes",
 								"627a44206ff8531e3984df44"
 							]
 						}
@@ -421,6 +330,41 @@
 					"response": []
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "password",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
